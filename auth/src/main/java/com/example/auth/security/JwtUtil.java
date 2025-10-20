@@ -62,7 +62,7 @@ package com.example.auth.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import jakarta.annotation.PostConstruct;
+//import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -70,8 +70,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 import java.util.Map;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 
 @Component
@@ -89,12 +89,12 @@ public class JwtUtil {
     @Value("${app.jwt.issuer}")
     private String issuer;
 
-    private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
-
-    @PostConstruct
-    public void checkSecret() {
-        logger.info("JWT Secret = {}", jwtSecret);
-    }
+//    private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
+//
+//    @PostConstruct
+//    public void checkSecret() {
+//        logger.info("JWT Secret = {}", jwtSecret);
+//    }
 
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
